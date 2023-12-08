@@ -1,0 +1,9 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+    command: --replSet rs0
+    volumes:
+      - ./rs-initiate.js:/docker-entrypoint-initdb.d/rs-initiate.js
